@@ -24,22 +24,6 @@ body{
     align-items: center;
     margin-bottom: 20px;
 }
-
-/* input[type="text"]{
-    flex-grow: 1;
-    border:none;
-    padding: 10px;
-    font-size: 18px;
-    border-radius:0; 
-    outline: none;
-    transition: border-color 0.3s ease;
-    background-color: #554f4f;
-    color: #fff;
-} */
-
-input[type="text"]:focus{
-    border-color: #0056b3;
-}
 button{
   padding:10px 20px;
   background-color: #e479ba;  
