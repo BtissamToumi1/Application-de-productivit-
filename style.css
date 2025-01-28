@@ -13,6 +13,9 @@ body{
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     text-align: center;
 }
+.navbar {
+    justify-content: flex-start;
+  }
 /* h1{
    color:#fff; 
    font-size: 24px;
@@ -24,7 +27,7 @@ body{
     align-items: center;
     margin-bottom: 20px;
 }
-button{
+/* button{
   padding:10px 20px;
   background-color: #e479ba;  
   color:#fff;
@@ -33,12 +36,10 @@ button{
   font-size: 16px;
   cursor:pointer;
   transition: background-color 0.3s ease;
-}
-button:hover{
-    background-color: #d45ea7;
-}
+} */
 
-ul{
+
+/* ul{
     list-style: none;
     padding: 0;
 }
@@ -52,8 +53,16 @@ li{
     border-radius: 4px;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} */
+li:hover{
+  background-color: rgba(111,131,211,0.1);
 }
-
+ul{
+   justify-content: center;
+}
+a{
+    justify-self: center;
+}
 .delete-button{
     background-color: #ff5050;
     color:#fff;
