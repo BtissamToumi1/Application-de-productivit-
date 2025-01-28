@@ -5,8 +5,8 @@ body{
     padding: 0;
 }
 .container{
-    background-color: #554f4f;
-    max-width: 400px ;
+    background-color: #ffffff;
+    max-width: 600px ;
     margin: 120px auto;
     padding: 20px;
     border-radius:8px;
@@ -96,4 +96,7 @@ li{
 }
 .edit-buuton{
     background-color: #ff9800;
+}
+th{
+    color:#d45ea7;
 }
