@@ -1,7 +1,7 @@
 //recuperer les informations d'un formulaire
 const submit = document.getElementById("buutonSubmit");//recuperer le boutton
 const formulaire = document.getElementById("donnees");//recuperer form
-displayListTaches();
+
 submit.addEventListener('click', function(event) {
 
     //empecher le rechargement de la page
@@ -49,13 +49,15 @@ function displayListTaches(){
 
     allFormData.forEach((tache,index)=>{
         const row=document.createElement("tr");
-        row.innerHTML='<td><input class="form-check-input" type="checkbox"></td><td>${tache.titre}</td><td>${tache.priorite}</td><td>${tache.cycle}</td><td>${tache.description}</td><td><button class="action"><i class="fa-solid fa-pen-to-square" onclick="editerTache(${index})"></i></button ><button class="action"><i class="fa-solid fa-trash" onclick="supprimerTache(${index})"></i></button><button class="action"><i class="fas fa-clock"></i></button></td>';
-        tachesList.appendChild(row)
+        row.innerHTML=`<td><input class="form-check-input" type="checkbox"></td><td>${tache.titre}</td><td>${tache.priorite}</td><td>${tache.cycle}</td><td>${tache.description}</td><td><button class="action"><i class="fa-solid fa-pen-to-square" onclick="editerTache(${index})"></i></button ><button class="action"><i class="fa-solid fa-trash" onclick="supprimerTache(${index})"></i></button><button class="action"><i class="fas fa-clock"></i></button></td>`;
+        tachesList.appendChild(row);
     })
 }
+displayListTaches();
 
+function supprimerTache(indice){
 
-
+}
 
 
 
