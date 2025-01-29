@@ -11,7 +11,7 @@
     <link href="style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
@@ -60,14 +60,14 @@
           <button type="button ms-5" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form>
+            <form id="donnees">
                 <div class="mb-3 mx-auto"> 
                   <label for="exampleInputEmail1" class="form-label">Titre de la tache</label>
-                  <input type="text" class="form-control" id="exampleInputtitrre1">
+                  <input type="text" class="form-control" id="titre">
                 </div>
                 <div class="mb-3 mx-auto">
                   <label for="exampleInputPassword1" class="form-label">Description</label>
-                  <input type="textarea" class="form-control" id="exampleInputdescription1">
+                  <input type="textarea" class="form-control" id="description">
                 </div>
                   <div class="mb-3">
                     <label for="disabledSelect" class="form-label">priorite</label>
@@ -79,21 +79,20 @@
                   </div>
                   <div class="mb-3">
                     <label for="dateInput" class="form-label">la date de debut</label>
-                    <input type="date" class="form-control" id="dateInput" name="date">
+                    <input type="date" class="form-control" id="datedebut" name="date">
                   </div>
                   <div class="mb-3">
                     <label for="dateInput" class="form-label">la date de fin</label>
-                    <input type="date" class="form-control" id="dateInput" name="date">
+                    <input type="date" class="form-control" id="datefin" name="date">
                   </div>
                   <div class="mb-3">
                     <label for="cycleInput" class="form-label">Nombre de cycle</label>
                     <input type="number" class="form-control" id="cycleInput" name="date">
                   </div>
             </form>
-    
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn" style="background-color: rgba(111,131,211,1); color:#fff">Submit</button>
+          <button type="button" id="buutonSubmit" class="btn " style="background-color: rgba(111,131,211,1); color:#fff">Submit</button>
         </div>
       </div>
     </div>
@@ -113,9 +112,9 @@
                     
                 </tr>
             </thead>
-            <tbody id="contact-list" class="text-center">
+            <tbody id="taches-list" class="text-center">
                 <tr><td><input class="form-check-input" type="checkbox" id="disabledFieldsetCheck"></td>
-                    <td class="text-center">Tit1cvbnm,.é</td>
+                    <td class="text-center">Tit1cvbnm</td>
                     <td class="text-center" style="color:#f61111">haute</td>
                     <td class="text-center"><input class="" type="checkbox"><input class="" type="checkbox"><input class="" type="checkbox"></td>
                      <td class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
@@ -124,10 +123,10 @@
                 </tr>
                 <td><input class="form-check-input" type="checkbox" id="disabledFieldsetCheck"></td>
                 <td class="text-center">Tit1cv bnm,.é</td>
-                <td class="text-center" style="color:#d6ae0f">haute</td>
+                <td class="text-center" style="color:#d6ae0f">Moyenne</td>
                 <td class="text-center"><input class="" type="checkbox"><input class="" type="checkbox"><input class="" type="checkbox"></td>
-                 <td class="text-center">description122</td>
-                <td class="text-center" style="background-color:#fff"><button class="action"><i class="fa-solid fa-pen-to-square"></i></button ><button class="action"><i class="fa-solid fa-trash"></i></button><button class="action"><i class="fas fa-clock"></i></button>
+                <td class="text-center">description122</td>
+                <td class="text-center" style="background-color:#fff"><button class="action" id="edit"><i class="fa-solid fa-pen-to-square"></i></button ><button class="action" id="supprimer"><i class="fa-solid fa-trash"></i></button><button class="action" id="chrono"><i class="fas fa-clock"></i></button>
                 </td>
             </tr>
             </tbody>

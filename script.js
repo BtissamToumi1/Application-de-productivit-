@@ -1,3 +1,134 @@
+//recuperer les informations d'un formulaire
+const submit = document.getElementById("buutonSubmit");//recuperer le boutton
+const formulaire = document.getElementById("donnees");//recuperer form
+
+submit.addEventListener('click', function(event) {
+
+    //empecher le rechargement de la page
+    event.preventDefault();
+
+    // recuperation des valeurs du formulaire
+    const titre=document.getElementById("titre").value;
+    const description=document.getElementById("description").value;
+    const priorite=document.getElementById("disabledSelect").value;
+    const cycle=document.getElementById("cycleInput").value;
+    const datedebut=document.getElementById("datedebut").value;
+    const datefin=document.getElementById("datefin").value;
+
+    //creation d'un objet avec les donnes de formulaire
+    const formData={
+          titre : titre,
+          description: description,
+          priorite:priorite,
+          cycle:cycle,
+          datedebut:datedebut,
+          datefin:datedebut, 
+    };
+    //recuperer les donnes existantes dùns le local storage(si disponible)
+    let allFormData=JSON.parse(localStorage.getItem("formData")) || [];
+    //ajouter l'objet formData au tableau
+    allFormData.push(formData);
+    //sauvgarder les donnees dans local storage
+    localStorage.setItem('formData',JSON.stringify(allFormData));
+    //
+    formulaire.reset();
+    //afficher les donnes dans le tabelau
+    displayListTaches();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const taskInput=document.getElementById("task-input");
 // const taskList=document.getElementById("taskList");
 // const tasks=JSON.parse(localStorage.getItem("tasks")) || [];
