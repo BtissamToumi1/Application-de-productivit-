@@ -78,19 +78,23 @@ function editerTache(index) {
     document.getElementById("datedebut").value = tache.datedebut;
     document.getElementById("datefin").value = tache.datefin;
     const update=document.getElementById("save");
+
     update.addEventListener('click',function(){
         tache.titre=document.getElementById("titre").value ;
+        console.log(tache.titre);
+        
         tache.description=document.getElementById("description").value;
         tache.priorite=document.getElementById("disabledSelect").value;
         tache.cycle=document.getElementById("cycleInput").value;
         tache.datedebut=document.getElementById("datedebut").value;
         tache.datefin=document.getElementById("datefin").value;
-       
+        allFormData.splice(index, 1,tache);
         localStorage.setItem('formData', JSON.stringify(allFormData));
-         displayListTaches();
-        formulaire.reset();
+        displayListTaches();
+        
         
     })
+    formulaire.reset();
     displayListTaches();
 }
 
