@@ -1,6 +1,8 @@
 //recuperer les informations d'un formulaire
 const submit = document.getElementById("buutonSubmit");//recuperer le boutton
 const formulaire = document.getElementById("donnees");//recuperer form
+const modalbutton=document.getElementById("boutonaModal");
+const modal=document.getElementById("exampleModal");
 
 submit.addEventListener('click', function(event) {
 
@@ -49,19 +51,53 @@ function displayListTaches(){
 
     allFormData.forEach((tache,index)=>{
         const row=document.createElement("tr");
-        row.innerHTML=`<td><input class="form-check-input" type="checkbox"></td><td>${tache.titre}</td><td>${tache.priorite}</td><td>${tache.cycle}</td><td>${tache.description}</td><td><button class="action"><i class="fa-solid fa-pen-to-square" onclick="editerTache(${index})"></i></button ><button class="action"><i class="fa-solid fa-trash" onclick="supprimerTache(${index})"></i></button><button class="action"><i class="fas fa-clock"></i></button></td>`;
+        row.innerHTML=`<tr id="${index}"><td><input class="form-check-input" type="checkbox"></td><td>${tache.titre}</td><td>${tache.priorite}</td><td><input class="form-check-input cc" type="checkbox"><input class="form-check-input cc" type="checkbox"><input class="form-check-input cc" type="checkbox"></td><td>${tache.description}</td><td><button class="action" ><i class="fa-solid fa-pen-to-square" onclick="editerTache(${index})"></i></button ><button class="action" onclick="supprimerTache(${index})"><i class="fa-solid fa-trash"></i></button><button class="action"><i class="fas fa-clock"></i></button></td></tr>`;
         tachesList.appendChild(row);
     })
 }
 displayListTaches();
 
 function supprimerTache(indice){
+      let allFormaData=JSON.parse(localStorage.getItem("formData")) || [];
+      allFormaData.splice(indice,1);//supprimer l'element a l'index donne 
+      localStorage.setItem('formData',JSON.stringify(allFormaData));
+      displayListTaches();
+}
+function editerTache(index) {
+    
+    let allFormData = JSON.parse(localStorage.getItem("formData")) || [];
+    let tache = allFormData[index];
+    modalbutton.click()
+    
 
+    // Remplir les champs du formulaire avec les valeurs de la tâche à éditer
+    document.getElementById("titre").value = tache.titre;
+    document.getElementById("description").value = tache.description;
+    document.getElementById("disabledSelect").value = tache.priorite;
+    document.getElementById("cycleInput").value = tache.cycle;
+    document.getElementById("datedebut").value = tache.datedebut;
+    document.getElementById("datefin").value = tache.datefin;
+    const update=document.getElementById("save");
+    update.addEventListener('click',function(){
+        tache.titre=document.getElementById("titre").value ;
+        tache.description=document.getElementById("description").value;
+        tache.priorite=document.getElementById("disabledSelect").value;
+        tache.cycle=document.getElementById("cycleInput").value;
+        tache.datedebut=document.getElementById("datedebut").value;
+        tache.datefin=document.getElementById("datefin").value;
+       
+        localStorage.setItem('formData', JSON.stringify(allFormData));
+         displayListTaches();
+        formulaire.reset();
+        
+    })
+    displayListTaches();
 }
 
 
 
 
+       
 
 
 
